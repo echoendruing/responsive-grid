@@ -1,10 +1,34 @@
-/* 
-Responsive Grid by Matt Ward
+/* -----------------------------------------------
 
-Yes, it's true. The last thing the development community needs is another responsive grid. I get that.
-Fortunately, this project is not intended for wide usage. It is a personal project that I am using
-to dig deeper into SASS and Compass, experimenting in a number of different areas.
+ RESPONSIVE GRID by Matt Ward
+ 
+ Yes, it's true. The last thing the development community needs is another responsive grid. I get that.
+ Fortunately, this project is not intended for wide usage. It is a personal project that I am using
+ to dig deeper into SASS and Compass, experimenting in a number of different areas.
 
-*/
+ ----------------------------------------------- */
 
-@import "compass/reset";
+/* Import Compass Modules */
+
+@import "compass/css3";
+
+/* Import custom functions and mixins for this project */
+@import "_00_functions.scss";
+
+/* Import the reset stylesheet */
+@import "_01_reset.scss";
+
+/* Import the basic variables  to be used through the other sheets  */
+@import "_02_vars.scss";
+
+/* Import base styles -- styles that are not applied with classes at all  */
+@import "_03_base.scss";
+
+/* Import styles for defining typography  */
+@import "_04_typography.scss";
+
+/* Import styles for defining the layout -- this is where the responsive magic happens */
+@import "_05_layout.scss";
+
+/* Import styles for presentation -- the nitty-gritty bits to make the site look sensational  */
+@import "_06_presentation.scss";

@@ -1,24 +1,421 @@
-/* 
-Responsive Grid by Matt Ward
+/* -----------------------------------------------
 
-Yes, it's true. The last thing the development community needs is another responsive grid. I get that.
-Fortunately, this project is not intended for wide usage. It is a personal project that I am using
-to dig deeper into SASS and Compass, experimenting in a number of different areas.
+ RESPONSIVE GRID by Matt Ward
+ 
+ Yes, it's true. The last thing the development community needs is another responsive grid. I get that.
+ Fortunately, this project is not intended for wide usage. It is a personal project that I am using
+ to dig deeper into SASS and Compass, experimenting in a number of different areas.
 
+ ----------------------------------------------- */
+/* Import Compass Modules */
+/* Import custom functions and mixins for this project */
+/* Import the reset stylesheet */
+/* -----------------------------------------------
+
+RESET STYLES
+
+----------------------------------------------- */
+/* Reset everything to a common baseline */
+/* line 9, ../sass/_01_reset.scss */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* Force block-level display for key elements */
+/* line 20, ../sass/_01_reset.scss */
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements: 
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+/* line 25, ../sass/_01_reset.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 31, ../sass/_01_reset.scss */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+/* line 42, ../sass/_01_reset.scss */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* line 44, ../sass/_01_reset.scss */
+img {
+  height: auto;
+}
+
+@media \0screen {
+  /* line 45, ../sass/_01_reset.scss */
+  img {
+    width: auto;
+  }
+}
+/* Prevent height distortion in IE8. */
+/* force a vertical scrollbar to prevent a jumpy page */
+/* line 48, ../sass/_01_reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+/* line 52, ../sass/_01_reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 54, ../sass/_01_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 59, ../sass/_01_reset.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 61, ../sass/_01_reset.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 63, ../sass/_01_reset.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+/* line 66, ../sass/_01_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 67, ../sass/_01_reset.scss */
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+/* line 68, ../sass/_01_reset.scss */
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+/* line 70, ../sass/_01_reset.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 72, ../sass/_01_reset.scss */
+input, select {
+  vertical-align: middle;
+}
+
+/* line 74, ../sass/_01_reset.scss */
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+/* line 81, ../sass/_01_reset.scss */
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+/* line 82, ../sass/_01_reset.scss */
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+/* line 83, ../sass/_01_reset.scss */
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+/* line 84, ../sass/_01_reset.scss */
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+/* line 86, ../sass/_01_reset.scss */
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+/* line 88, ../sass/_01_reset.scss */
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+/* line 90, ../sass/_01_reset.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 92, ../sass/_01_reset.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 94, ../sass/_01_reset.scss */
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+/* line 97, ../sass/_01_reset.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+/* line 98, ../sass/_01_reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 99, ../sass/_01_reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+/* line 102, ../sass/_01_reset.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+/* line 110, ../sass/_01_reset.scss */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+/* line 113, ../sass/_01_reset.scss */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+/* line 117, ../sass/_01_reset.scss */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+/* line 120, ../sass/_01_reset.scss */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+/* Import the basic variables  to be used through the other sheets  */
+/* -----------------------------------------------
+ *
+ * SET VARIABLES ACROSS THE PROJECT
+ *
+ *----------------------------------------------- */
+/* Import base styles -- styles that are not applied with classes at all  */
+/* -----------------------------------------------
+ *
+ *BASE LEVEL STYLES
+ *
+ *----------------------------------------------- */
+/* Import styles for defining typography  */
+/* -----------------------------------------------
+ *
+ * GENERAL TYPOGRAPHIC STYLES
+ *
+ *----------------------------------------------- */
+/* Import styles for defining the layout -- this is where the responsive magic happens */
+/* -----------------------------------------------
+ *
+ * GENERAL LAYOUT STYLES
+ *
+ *----------------------------------------------- */
+/* ClearFix + Grid Clear
+/* We're going to auto replicate clearfix on the .grid class because we can safely assume that we will 
+ * want to be clearing grids (because all columns elements will be floated) */
+/* line 14, ../sass/_05_layout.scss */
+.clearfix:before,
+.clearfix:after,
+.grid:before,
+.grid:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
 
-html { line-height: 1; }
+/* line 21, ../sass/_05_layout.scss */
+.clearfix:after,
+.grid:after {
+  clear: both;
+}
 
-ol, ul { list-style: none; }
+/* line 25, ../sass/_05_layout.scss */
+.clearfix,
+.grid {
+  zoom: 1;
+}
 
-table { border-collapse: collapse; border-spacing: 0; }
+/* line 29, ../sass/_05_layout.scss */
+.clear {
+  clear: both;
+}
 
-caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+/* .grid styles
+/* These are basic styles for setting up the grid wrapper */
+/* line 36, ../sass/_05_layout.scss */
+.grid {
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+}
 
-q, blockquote { quotes: none; }
-q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+/* columns */
+/* line 45, ../sass/_05_layout.scss */
+.span-1 {
+  width: 61px;
+  float: left;
+}
 
-a img { border: none; }
+/* line 45, ../sass/_05_layout.scss */
+.span-2 {
+  width: 62px;
+  float: left;
+}
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+/* line 45, ../sass/_05_layout.scss */
+.span-3 {
+  width: 63px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-4 {
+  width: 64px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-5 {
+  width: 65px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-6 {
+  width: 66px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-7 {
+  width: 67px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-8 {
+  width: 68px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-9 {
+  width: 69px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-10 {
+  width: 70px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-11 {
+  width: 71px;
+  float: left;
+}
+
+/* line 45, ../sass/_05_layout.scss */
+.span-12 {
+  width: 72px;
+  float: left;
+}
+
+/* Import styles for presentation -- the nitty-gritty bits to make the site look sensational  */
+/* -----------------------------------------------
+ *
+ * GENERAL PRESENTATION STYLES
+ *
+ *----------------------------------------------- */
+/* We want to be able to SEE the grid blocks */
+/* line 20, ../sass/_06_presentation.scss */
+.span-1,
+.span-2,
+.span-3,
+.span-4,
+.span-5,
+.span-6,
+.span-7,
+.span-8,
+.span-9,
+.span-10,
+.span-11,
+.span-12 {
+  background: #ddd;
+  text-align: center;
+}

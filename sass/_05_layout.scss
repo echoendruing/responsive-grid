@@ -1,0 +1,49 @@
+/* -----------------------------------------------
+ *
+ * GENERAL LAYOUT STYLES
+ *
+ *----------------------------------------------- */
+
+/* ClearFix + Grid Clear
+/* We're going to auto replicate clearfix on the .grid class because we can safely assume that we will 
+ * want to be clearing grids (because all columns elements will be floated) */
+
+.clearfix:before,
+.clearfix:after,
+.grid:before,
+.grid:after{
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after,
+.grid:after{
+  clear: both;
+}
+.clearfix,
+.grid{
+  zoom: 1;
+}
+
+.clear{
+  clear: both;
+}
+
+/* .grid styles
+/* These are basic styles for setting up the grid wrapper */
+
+.grid{
+  display: block;
+  max-width: $grid-max-width;
+  margin: auto;
+}
+
+/* columns */
+
+@for $i from 1 through 12{
+  .#{$column-name}-#{$i}{
+    width: 60px + $i;
+    float: left;
+  }
+}
