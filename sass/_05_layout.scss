@@ -41,19 +41,31 @@
 
 /* columns */
 
-@for $i from 1 through $column-number{
-
-  $d: $column-number + 1;
-  $col-width: 100/$column-number;
-
-  $margins: ($column-margin / $grid-max-width);
-
-  $col-percent: ($col-width * $i) - (($margins*100) * ($i * 2));
-
-  .#{$column-name}-#{$i}{
-    width: $col-percent * 1%;
+/* Generalized selector to hit all of the span-x classes, since the margins and floats will be consistent
+   on all of these */
+   
+[class*="span-"]{
     margin-left: $margins * 100%; 
     margin-right: $margins * 100%; 
-    float: left;
+    float: left;	
+}
+
+@for $i from 1 through $column-number{
+
+  /* For every column span but 1, we also need to determine the total number of margins that the element spans
+     This is calculated as the total the number of columns, minus one and then multiplied by 2 */
+
+  $inner-margins: ($i - 1) * 2;
+  
+  /* Finally, we can determine the actual value that we need to span for each column span.  
+     This is calculated by:
+        - determining the total number of columns to span 
+        - then adding the total number of margins to span */
+
+  $col-width: ($single-col-width * $i) + ($inner-margins * ( $margins * 100 ) );
+
+  /* Now let's actually create the specific unpadded rule for the width */
+  .#{$column-name}-#{$i}{
+    width: $col-width * 1%;
   }
 }

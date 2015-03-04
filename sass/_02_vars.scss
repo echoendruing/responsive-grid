@@ -4,9 +4,28 @@
  *
  *----------------------------------------------- */
 
-$grid-max-width: 1000px;
+/* Define the "maximum" width for the grid wrapper */
+
+$grid-max-width: 1200px;
 
 $column-name: span !default;
 $column-number: 12; 
 $column-margin: 10px;
 $column-padding: 20px;
+
+/* Define the margin widths. We need to do this first because we need to factor these widths into the percentage widths
+   Margin widths are basically the number of columns divided by the arbitrary maximum width value */
+
+$margins: ($column-margin / $grid-max-width);
+  
+/* Next, we determine the total percentage of the width that needs to be dedicated to margins
+   This is the margin value multiplied by twice the number of columns (1 margin for each side), then multiplied by 100 to 
+   get the percentage value instead of the decimal value */
+
+$total-margins: $margins * ( $column-number * 2) * 100;
+
+/* Define the total available width for columns of this size, which is equal to the number of columns minus the number of margins 
+   This is calculated as the total available space, less the margins, divided by the number of columns */
+
+$single-col-width: ( 100 - $total-margins ) / $column-number;
+
