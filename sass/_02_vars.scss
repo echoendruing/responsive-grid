@@ -17,6 +17,9 @@ $column-padding: 20px;
    Margin widths are basically the number of columns divided by the arbitrary maximum width value */
 
 $margins: ($column-margin / $grid-max-width);
+
+
+$padding: ( ( $column-padding / $grid-max-width ) ) * 100;
   
 /* Next, we determine the total percentage of the width that needs to be dedicated to margins
    This is the margin value multiplied by twice the number of columns (1 margin for each side), then multiplied by 100 to 
@@ -29,3 +32,5 @@ $total-margins: $margins * ( $column-number * 2) * 100;
 
 $single-col-width: ( 100 - $total-margins ) / $column-number;
 
+
+$single-padded-col-width: ( ( 100 - $total-margins ) / $column-number );

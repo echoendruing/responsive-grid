@@ -16,7 +16,6 @@ RESET STYLES
 
 ----------------------------------------------- */
 /* Reset everything to a common baseline */
-/* line 9, ../sass/_01_reset.scss */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
   margin: 0;
   padding: 0;
@@ -28,19 +27,16 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 }
 
 /* Force block-level display for key elements */
-/* line 20, ../sass/_01_reset.scss */
 article, aside, figure, footer, header, nav, section, details, summary {
   display: block;
 }
 
 /* Handle box-sizing while better addressing child elements: 
    http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-/* line 25, ../sass/_01_reset.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 31, ../sass/_01_reset.scss */
 *,
 *:before,
 *:after {
@@ -51,44 +47,37 @@ html {
 /* Responsive images and other embedded objects
    Note: keeping IMG here will cause problems if you're using foreground images as sprites.
    If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
-/* line 42, ../sass/_01_reset.scss */
 img,
 object,
 embed {
   max-width: 100%;
 }
 
-/* line 44, ../sass/_01_reset.scss */
 img {
   height: auto;
 }
 
 @media \0screen {
-  /* line 45, ../sass/_01_reset.scss */
   img {
     width: auto;
   }
 }
 /* Prevent height distortion in IE8. */
 /* force a vertical scrollbar to prevent a jumpy page */
-/* line 48, ../sass/_01_reset.scss */
 html {
   overflow-y: scroll;
 }
 
 /* we use a lot of ULs that aren't bulleted. 
 	don't forget to restore the bullets within content. */
-/* line 52, ../sass/_01_reset.scss */
 ul {
   list-style: none;
 }
 
-/* line 54, ../sass/_01_reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 59, ../sass/_01_reset.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -97,37 +86,31 @@ q:after {
   content: none;
 }
 
-/* line 61, ../sass/_01_reset.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 63, ../sass/_01_reset.scss */
 abbr[title], dfn[title] {
   border-bottom: 1px dotted #000;
   cursor: help;
 }
 
 /* tables still need cellspacing="0" in the markup */
-/* line 66, ../sass/_01_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 67, ../sass/_01_reset.scss */
 th {
   font-weight: bold;
   vertical-align: bottom;
 }
 
-/* line 68, ../sass/_01_reset.scss */
 td {
   font-weight: normal;
   vertical-align: top;
 }
 
-/* line 70, ../sass/_01_reset.scss */
 hr {
   display: block;
   height: 1px;
@@ -137,12 +120,10 @@ hr {
   padding: 0;
 }
 
-/* line 72, ../sass/_01_reset.scss */
 input, select {
   vertical-align: middle;
 }
 
-/* line 74, ../sass/_01_reset.scss */
 pre {
   white-space: pre;
   /* CSS2 */
@@ -154,78 +135,64 @@ pre {
   /* IE */
 }
 
-/* line 81, ../sass/_01_reset.scss */
 input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-/* line 82, ../sass/_01_reset.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-/* line 83, ../sass/_01_reset.scss */
 .ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
-/* line 84, ../sass/_01_reset.scss */
 .ie6 input {
   vertical-align: text-bottom;
 }
 
-/* line 86, ../sass/_01_reset.scss */
 select, input, textarea {
   font: 99% sans-serif;
 }
 
-/* line 88, ../sass/_01_reset.scss */
 table {
   font-size: inherit;
   font: 100%;
 }
 
-/* line 90, ../sass/_01_reset.scss */
 small {
   font-size: 85%;
 }
 
-/* line 92, ../sass/_01_reset.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 94, ../sass/_01_reset.scss */
 td, td img {
   vertical-align: top;
 }
 
 /* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
-/* line 97, ../sass/_01_reset.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
 }
 
-/* line 98, ../sass/_01_reset.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 99, ../sass/_01_reset.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* standardize any monospaced elements */
-/* line 102, ../sass/_01_reset.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif;
 }
 
 /* hand cursor on clickable elements */
-/* line 110, ../sass/_01_reset.scss */
 .clickable,
 label,
 input[type=button],
@@ -236,13 +203,11 @@ button {
 }
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-/* line 113, ../sass/_01_reset.scss */
 button, input, select, textarea {
   margin: 0;
 }
 
 /* make buttons play nice in IE */
-/* line 117, ../sass/_01_reset.scss */
 button,
 input[type=button] {
   width: auto;
@@ -250,7 +215,6 @@ input[type=button] {
 }
 
 /* scale images in IE7 more attractively */
-/* line 120, ../sass/_01_reset.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
@@ -285,6 +249,20 @@ input[type=button] {
  * GENERAL TYPOGRAPHIC STYLES
  *
  *----------------------------------------------- */
+body {
+  font-family: Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
 /* Import styles for defining the layout -- this is where the responsive magic happens */
 /* -----------------------------------------------
  *
@@ -294,7 +272,6 @@ input[type=button] {
 /* ClearFix + Grid Clear
 /* We're going to auto replicate clearfix on the .grid class because we can safely assume that we will 
  * want to be clearing grids (because all columns elements will be floated) */
-/* line 14, ../sass/_05_layout.scss */
 .clearfix:before,
 .clearfix:after,
 .grid:before,
@@ -305,184 +282,149 @@ input[type=button] {
   overflow: hidden;
 }
 
-/* line 21, ../sass/_05_layout.scss */
 .clearfix:after,
 .grid:after {
   clear: both;
 }
 
-/* line 25, ../sass/_05_layout.scss */
 .clearfix,
 .grid {
   zoom: 1;
 }
 
-/* line 29, ../sass/_05_layout.scss */
 .clear {
   clear: both;
 }
 
 /* .grid styles
 /* These are basic styles for setting up the grid wrapper */
-/* line 36, ../sass/_05_layout.scss */
 .grid {
   display: block;
   max-width: 1200px;
   margin: auto;
+  padding: 0.83333%;
 }
 
 /* columns */
 /* Generalized selector to hit all of the span-x classes, since the margins and floats will be consistent
    on all of these */
-/* line 47, ../sass/_05_layout.scss */
 [class*="span-"] {
   margin-left: 0.83333%;
   margin-right: 0.83333%;
   float: left;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
+/* Generate the column styles. Commenting outside of the @for loop to avoid duplicate comments
+
+   $inner-margins;
+
+   For every column span but 1, we also need to determine the total number of margins that the element spans
+   This is calculated as the total the number of columns, minus one and then multiplied by 2
+   
+   $col-width
+   
+   We can determine the actual value that we need to span for each column span.  
    This is calculated by:
       - determining the total number of columns to span 
       - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
 .span-1 {
   width: 6.66667%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-1-pad {
+  width: 6.66667%;
+}
+
 .span-2 {
   width: 15%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-2-pad {
+  width: 15%;
+}
+
 .span-3 {
   width: 23.33333%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-3-pad {
+  width: 23.33333%;
+}
+
 .span-4 {
   width: 31.66667%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-4-pad {
+  width: 31.66667%;
+}
+
 .span-5 {
   width: 40%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-5-pad {
+  width: 40%;
+}
+
 .span-6 {
   width: 48.33333%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-6-pad {
+  width: 48.33333%;
+}
+
 .span-7 {
   width: 56.66667%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-7-pad {
+  width: 56.66667%;
+}
+
 .span-8 {
   width: 65%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-8-pad {
+  width: 65%;
+}
+
 .span-9 {
   width: 73.33333%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-9-pad {
+  width: 73.33333%;
+}
+
 .span-10 {
   width: 81.66667%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-10-pad {
+  width: 81.66667%;
+}
+
 .span-11 {
   width: 90.0%;
 }
 
-/* For every column span but 1, we also need to determine the total number of margins that the element spans
-   This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-/* Finally, we can determine the actual value that we need to span for each column span.  
-   This is calculated by:
-      - determining the total number of columns to span 
-      - then adding the total number of margins to span */
-/* Now let's actually create the specific unpadded rule for the width */
-/* line 68, ../sass/_05_layout.scss */
+.span-11-pad {
+  width: 90.0%;
+}
+
 .span-12 {
   width: 98.33333%;
+}
+
+.span-12-pad {
+  width: 98.33333%;
+}
+
+.padded {
+  padding: 1.66667%;
 }
 
 /* Import styles for presentation -- the nitty-gritty bits to make the site look sensational  */
@@ -492,33 +434,16 @@ input[type=button] {
  *
  *----------------------------------------------- */
 /* We want to be able to SEE the grid blocks */
-/* line 20, ../sass/_06_presentation.scss */
-.span-1,
-.span-2,
-.span-3,
-.span-4,
-.span-5,
-.span-6,
-.span-7,
-.span-8,
-.span-9,
-.span-10,
-.span-11,
-.span-12 {
-  background: #ddd;
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+div[class*="span-"] {
+  background: #0dd;
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
-/* line 28, ../sass/_06_presentation.scss */
 .grid {
   background: #fff;
 }
 
-/* line 31, ../sass/_06_presentation.scss */
 body {
-  background: #999;
+  background: #ddd;
 }

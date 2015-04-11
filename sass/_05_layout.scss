@@ -37,6 +37,7 @@
   display: block;
   max-width: $grid-max-width;
   margin: auto;
+  padding: $margins * 100%;
 }
 
 /* columns */
@@ -47,25 +48,41 @@
 [class*="span-"]{
     margin-left: $margins * 100%; 
     margin-right: $margins * 100%; 
-    float: left;	
+    float: left;
 }
+
+/* Generate the column styles. Commenting outside of the @for loop to avoid duplicate comments
+
+   $inner-margins;
+
+   For every column span but 1, we also need to determine the total number of margins that the element spans
+   This is calculated as the total the number of columns, minus one and then multiplied by 2
+   
+   $col-width
+   
+   We can determine the actual value that we need to span for each column span.  
+   This is calculated by:
+      - determining the total number of columns to span 
+      - then adding the total number of margins to span */
 
 @for $i from 1 through $column-number{
 
-  /* For every column span but 1, we also need to determine the total number of margins that the element spans
-     This is calculated as the total the number of columns, minus one and then multiplied by 2 */
-
   $inner-margins: ($i - 1) * 2;
-  
-  /* Finally, we can determine the actual value that we need to span for each column span.  
-     This is calculated by:
-        - determining the total number of columns to span 
-        - then adding the total number of margins to span */
-
+ 
   $col-width: ($single-col-width * $i) + ($inner-margins * ( $margins * 100 ) );
 
-  /* Now let's actually create the specific unpadded rule for the width */
   .#{$column-name}-#{$i}{
     width: $col-width * 1%;
   }
+  
+  $col-width: ($single-padded-col-width * $i) + ($inner-margins * ( $margins * 100 ) );
+
+  .#{$column-name}-#{$i}-pad{
+    width: $col-width * 1%;
+  }
+
+}
+
+.padded{
+    padding: $padding * 1%;
 }
